@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content=""> 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Fedback</title>
+  </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+	<div id="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<h1 style="color: black">Help us improve!</h1>
+					
+			</div>
+		</div>
+	</div>
+    <div class="container2">
+        <form action="{{ url_for('feedback')}}" method="post">
+        <form class="form-search" style="text-align:center;">
+        
+            
+            <textarea style="width:100%; font-weight:500;" rows="2" name="sentence" class="input-lg" placeholder="What was the sentence you entered?">{{text1}}</textarea>
+	          <a style="color:black">Please select correct result</a><br>
+            <input type="radio" name="feed" value="Irony"> Irony
+            <input type="radio" name="feed" value="Not Irony"> Not Irony<br>
+            <input type="submit" value="Submit" id="button" class="btn btn-warning btn-lg" style="color: #FFFFFF;">
+            <br> <h7 style="font-family: Arial Black;">{{ text }}</h7> </br>					
+            </form>	
+        </form>	
+    </body>
+    </html>
